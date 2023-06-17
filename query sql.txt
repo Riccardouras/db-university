@@ -1,0 +1,31 @@
+studenti nati nel 1990:
+
+SELECT * FROM students WHERE YEAR(date_of_birth) = 1990;
+
+Esami con più di 10 cfu:
+
+SELECT * FROM `courses` WHERE cfu > 10;
+
+Studenti con più di 30 anni:
+
+SELECT * FROM university.students WHERE DATE_ADD(date_of_birth, INTERVAL 30 YEAR) < CURDATE(); (3566)
+
+Corsi del primo semestre del primo anno:
+
+SELECT * FROM `courses` WHERE period = "I semestre" AND year = 1;
+
+Esami data 20-06-2020 e dopo le 14:
+
+SELECT * FROM `exams` WHERE date = "2020-06-20" AND hour > "14:00:00";
+
+Selezionare tutti i corsi di laurea magistrale
+
+SELECT * FROM `degrees` WHERE level = "magistrale";
+
+Da quanti dipartimenti è composta l'università?
+
+SELECT COUNT(*) AS total_departments FROM departments;
+
+Quanti sono gli insegnanti che non hanno un numero di telefono?
+
+SELECT COUNT(*) AS teachers_without_phone FROM teachers WHERE phone IS NULL;
